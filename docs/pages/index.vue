@@ -7,15 +7,8 @@
       role="main">
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-6 mx-auto col-md-6 order-md-2">
-            <img
-              src="~/static/icon.png"
-              alt="Logo"
-              class="img-fluid mx-auto d-block mb-3 mb-md-0"
-            >
-          </div>
-          <div class="col-md-6 order-md-1 text-center text-md-left pr-md-5">
-            <h1 class="mb-3 bd-text-purple-bright">Bootstrap + Vue</h1>
+          <div class="col-md-6 mx-auto order-md-1 text-center text-md-left pr-md-5">
+            <h1 class="mb-3 bd-text-purple-bright">UI Kit</h1>
             <p class="lead">
               Build responsive, mobile-first projects on the web using Vue.js and the world's most popular front-end CSS library &mdash; Bootstrap V4.
             </p>
@@ -36,11 +29,6 @@
                 variant="bd-primary"
                 size="lg"
                 class="mb-3 mb-md-0 mr-md-3">Get started</b-btn>
-              <b-btn
-                href="https://github.com/bootstrap-vue/bootstrap-vue"
-                variant="outline-secondary"
-                size="lg"
-                target="_blank">Github</b-btn>
             </div>
             <b-link
               class="text-muted mb-0"

@@ -11,14 +11,22 @@ renderer.table = function renderTable (header, body) {
 }
 
 module.exports = {
+  head: {
+    script: [
+      { src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' }
+    ]
+  },
   srcDir: __dirname,
-
+  mode: 'spa',
+  router: {
+    mode: 'hash'
+  },
   build: {
     extractCSS: true,
     cssSourceMap: true,
     extend (config) {
       config.resolve.alias.vue = 'vue/dist/vue.common'
-
+      config.output.publicPath = './_nuxt/'
       config.devtool = 'source-map'
 
       config.module.rules.push({
@@ -30,16 +38,6 @@ module.exports = {
         ]
       })
     }
-  },
-
-  loading: {
-    color: '#59cc93'
-  },
-
-  manifest: {
-    name: 'Bootstrap Vue',
-    description: 'Quickly integrate Bootstrap 4 components with Vue.js',
-    theme_color: '#563d7c'
   },
 
   generate: {
@@ -65,22 +63,10 @@ module.exports = {
     '~/plugins/docs.js'
   ],
 
-  modules: [
-    '@nuxtjs/pwa',
-    '@nuxtjs/google-analytics'
-  ],
-
-  'google-analytics': {
-    id: 'UA-89526435-1',
-    autoTracking: {
-      exception: true
-    }
-  },
-
   css: [
-    'bootstrap/dist/css/bootstrap.css',
     'highlightjs/styles/atom-one-light.css',
     'codemirror/lib/codemirror.css',
+    '~assets/css/bootstrap.min.css',
     '~assets/css/docs.min.css',
     '~assets/css/styles.css'
   ]

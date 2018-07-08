@@ -24,7 +24,7 @@ Vue.use(BootstrapVue);
 And import Bootstrap and Bootstrap-Vue css files:
 
 ```js
-import 'bootstrap/dist/css/bootstrap.css'
+import 'PATH_TO_DOWNLOADED_BOOTSTRAP_CSS'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 ```
 
@@ -46,36 +46,38 @@ Add `bootstrap-vue/nuxt` to modules section of **nuxt.config.js**
 ```js
 {
   modules: [
-    'bootstrap-vue/nuxt',
-
-    // Or if you have custom bootstrap CSS...
     ['bootstrap-vue/nuxt', { css: false }],
   ]
 }
 ```
 
-## vue-cli
+## Font
 
-Bootstrap-Vue has two vue-cli templates available:
+To make your custom font work, you need to include the following script:
 
-- [webpack-simple](https://github.com/bootstrap-vue/webpack-simple): Quick scaffold for a proof of concept or small app
-- [webpack](https://github.com/bootstrap-vue/webpack): Larger, production ready template with more options
-
-```bash
-# Ensure vue-cli is installed and up to date
-npm i -g vue-cli
-# Initialize a bootstrap project in the directory 'my-project'
-vue init bootstrap-vue/webpack-simple my-project
-# Change into the directory
-cd my-project
-# Install dependencies
-npm i
-# Fire up the dev server with HMR
-npm run dev
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
 ```
 
-You can repeat the commands above replacing `bootstrap-vue/webpack-simple` with
-`bootstrap-vue/webpack` for the webpack template.
+*Or if you are using nuxt.js*, add the that script to head section of **nuxt.config.js**:
+
+```js
+head: {
+    script: [
+      { src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' }
+    ]
+  },
+```
+
+Finally, load your font in `index.js`:
+
+```js
+WebFont.load({
+    google: {
+      families: ["FONT_FAMILY_FLAG"]
+    }
+  });
+```
 
 ## Individual components and directives
 
@@ -173,7 +175,7 @@ module.exports = {
 
 ```html
 <!-- Add this to <head> -->
-<link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="PATH_TO_bootstrap.css"/>
 <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
 
 <!-- Add this after vue.js -->

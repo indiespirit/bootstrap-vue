@@ -7,21 +7,19 @@
                     <m-search/>
                     <m-sidebar></m-sidebar>
                 </b-col>
-                
+
                 <b-col xl="2" class="d-none d-xl-block bd-toc pt-4">
                     <m-toc />
                 </b-col>
 
                 <b-col cols="12" md="9" xl="8" class="pb-md-3 pl-md-5 bd-content">
-                    <b-button-group class="my-2 float-right">
-                        <b-btn size="sm" variant="light" :href="issueURL" target="_blank">Report an issue</b-btn>
-                        <b-btn size="sm" variant="light" :href="editPageURL" target="_blank">Edit this page</b-btn>
-                    </b-button-group>
-
                     <nuxt/>
                 </b-col>
             </b-row>
         </b-container>
+        <div style="text-align: center; padding: 10px 0;">
+          Docs originally created by <a href="https://bootstrap-vue.js.org/" target="_blank">Bootstrap Vue</a>, licensed under <a href="https://github.com/bootstrap-vue/bootstrap-vue/blob/dev/LICENSE" target="_blank">MIT</a> and were modified by <a href="https://ui1.io" target="_blank">UI1</a> UI Kit Generator.
+        </div>
     </div>
 </template>
 
