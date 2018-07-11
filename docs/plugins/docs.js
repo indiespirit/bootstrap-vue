@@ -8,14 +8,6 @@
 // Disable vue global error handler
 import Vue from 'vue'
 
-try {
-  window.WebFont.load({
-    google: {
-      families: ['FONT_FAMILY_FLAG']
-    }
-  })
-} catch (err) {}
-
 export default function () {
   Vue.config.errorHandler = console.error
 }

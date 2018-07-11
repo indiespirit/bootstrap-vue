@@ -13,7 +13,19 @@ renderer.table = function renderTable (header, body) {
 module.exports = {
   head: {
     script: [
-      { src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' }
+      { src: 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js' },
+      { innerHTML: `
+      if (window.WebFont) {
+        window.WebFont.load({
+          google: {
+            families: ['FONT_FAMILY_FLAG']
+          }
+        })
+      }`}
+    ],
+    __dangerouslyDisableSanitizers: ['script'],
+    link: [
+      { rel: 'stylesheet', href: './bootstrap.css' }
     ]
   },
   srcDir: __dirname,
@@ -66,7 +78,6 @@ module.exports = {
   css: [
     'highlightjs/styles/atom-one-light.css',
     'codemirror/lib/codemirror.css',
-    '~assets/css/bootstrap.min.css',
     '~assets/css/docs.min.css',
     '~assets/css/styles.css'
   ]
